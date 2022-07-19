@@ -1,11 +1,12 @@
 package main
 
 import (
-	"net/http"
-	"github.com/gin-gonic/gin"
+	//"github.com/gin-gonic/gin"
 	"github.com/fvbock/endless"
-	setting "Usedgo/pkg/setting"
-	router "Usedgo/routers/router"
+	"github.com/TryForYourLove/Usedgo/pkg/setting"
+	"github.com/TryForYourLove/Usedgo/routers/router"
+	"log"
+	"fmt"
 )
 
 func main() {
@@ -19,7 +20,7 @@ func main() {
 		log.Printf("Actual pid is %d", syscall.Getpid())
 	}
 	
-	err := server.ListenAndServe("localhost:8081")
+	err := server.ListenAndServe()
 	if err != nil {
 		log.Printf("Server err: %v", err)
 	}
