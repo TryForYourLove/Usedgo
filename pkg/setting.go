@@ -21,7 +21,7 @@ func init(){
 	log.Fatalf("Fail to parse 'conf/app.ini': %v", err)
     }
 
-    LoadBase()
+    //LoadBase()
     LoadServer()
 }
 
@@ -31,7 +31,7 @@ func LoadServer() {
 	log.Fatalf("Fail to get section 'server': %v", err)
     }
 
-    HTTPPort = sec.Key(HTTP_PORT).MustInt(8081)
+    HTTPPort = sec.Key("HTTP_PORT").MustInt(8081)
     ReadTimeout = time.Duration(sec.Key("READ_TIMEOUT").MustInt(60)) * time.Second
     WriteTimeout = time.Duration(sec.Key("WRITE_TIMEOUT").MustInt(60)) * time.Second
 }

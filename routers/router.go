@@ -7,7 +7,7 @@ import (
 func InitRouter() *gin.Engine {
      r := gin.New()
      r.Use(gin.Logger())
-     r.Use(gin.Recovrey())
+     r.Use(gin.Recovery())
  
     return r                                                                                                                     
 }      
